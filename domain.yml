@@ -1,0 +1,69 @@
+intents:
+    - greet
+    - goodbye
+    - about_me
+    - inform
+    - search_provider
+    - menu
+    - order
+    - get_size
+    - get_type
+
+entities:
+    - location
+    - facility_type
+    - pizza_type
+    - pizza_size
+
+actions: 
+    - action_facility_search
+    - action_save_order
+    - action_get_menu
+
+slots:
+    location:
+        type: text
+    facility_type:
+        type: text
+    address:
+        type: unfeaturized
+    pizza_type:
+        type: categorical
+        values:
+            - americana
+            - margherita
+            - frutti di mare
+            - italiana
+    pizza_size:
+        type: categorical
+        values:
+            - small
+            - medium
+            - large
+
+responses:
+    utter_greet:
+        - text: 'Hey! How are you?'
+
+    utter_goodbye:
+        - text: 'Ok. Bye!'
+
+    utter_about_me:
+        - text: "I'm basic rasa bot. Nice to mmet you"
+
+    utter_ask_location:
+        - text: 'Can you provide your location please'
+        - text: 'To find the nearest {facility_type} I need your address'
+
+    utter_ask_for_pizza_type:
+        - text: 'What pizza would you like to order?'
+
+    utter_ask_for_pizza_size:
+        - text: 'What pizza would you like to order?'
+    
+    utter_confirm_order:
+        - text: 'The order is: {pizza_size} {pizza_type}'
+
+session_config:
+    session_expiration_time: 60
+    carry_over_slots_to_new_session: true
