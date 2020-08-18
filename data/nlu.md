@@ -42,6 +42,7 @@
 - I'm starving
 - I'm famished
 - Show me what I can eat here
+- im very hyngry
 
 ## intent:order
 - i want to order [large](pizza-size) [americana](pizza_type)
