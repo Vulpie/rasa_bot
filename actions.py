@@ -70,6 +70,6 @@ class ActionGetMenuList(Action):
         menu = session.query(PizzaList).all()
         print(menu)
 
-        dispatcher.utter_message("Menu: {}".format(menu))
+        dispatcher.utter_message("Menu:{}".format(menu))
         session.close()
         return []
