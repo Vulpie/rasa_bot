@@ -1,68 +1,22 @@
 intents:
     - greet
     - goodbye
-    - about_me
-    - inform
-    - search_provider
-    - menu
-    - order
-    - get_size
-    - get_type
-
-entities:
-    - location
-    - facility_type
-    - pizza_type
-    - pizza_size
-
-actions: 
-    - action_facility_search
-    - action_save_order
-    - action_get_menu
-
-slots:
-    location:
-        type: text
-    facility_type:
-        type: text
-    address:
-        type: unfeaturized
-    pizza_type:
-        type: categorical
-        values:
-            - americana
-            - margherita
-            - frutti di mare
-            - italiana
-    pizza_size:
-        type: categorical
-        values:
-            - small
-            - medium
-            - large
+    - ask_about_me
+    - ask_skill_list
 
 responses:
     utter_greet:
-        - text: 'Hey! How are you?'
+        - text: 'Cześć. W czym mogę Ci pomóc?'
 
     utter_goodbye:
-        - text: 'Ok. Bye!'
+        - text: 'Miłego dnia.'
 
-    utter_about_me:
-        - text: "I'm basic rasa bot. Nice to mmet you"
-
-    utter_ask_location:
-        - text: 'Can you provide your location please'
-        - text: 'To find the nearest {facility_type} I need your address'
-
-    utter_ask_for_pizza_type:
-        - text: 'What pizza would you like to order?'
-
-    utter_ask_for_pizza_size:
-        - text: 'What pizza would you like to order?'
+    utter_ask_about_me:
+        - text: "Jestem prototypem wirtualnego asystenta kandydata na studia. Jestem tu po to, żeby odpowiedzieć na twoje pytania dotyczące rekrutacji na naszą uczelnię"
     
-    utter_confirm_order:
-        - text: 'The order is: {pizza_size} {pizza_type}'
+    utter_ask_skill_list:
+        - text: "Chętnie odpowiem na pytania związane z: \n > Listą kierunków na naszej uczelni \n > Limitami miejsc na wybrany przez Ciebie kierunek "
+
 
 session_config:
     session_expiration_time: 60

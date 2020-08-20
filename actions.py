@@ -15,7 +15,6 @@ class PizzaList(Base):
 
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
-session = Session()
 
 class ActionHelloWorld(Action):
     def name(self) -> Text:
@@ -66,10 +65,13 @@ class ActionGetMenuList(Action):
         tracker: Tracker,
         domain: Dict[Text, Any],
     ) -> List[Dict[Text, Any]]:
-        
-        menu = session.query(PizzaList).all()
-        print(menu)
+        session = Session()
+        menu_display = "Menu: "
+        pizza_list = session.query(PizzaList.type_of_pizza).all()
+        for pizza in pizza_list:
+            
+            menu_display += '\n' + pizza[0]
 
-        dispatcher.utter_message("Menu:{}".format(menu))
+        dispatcher.utter_message(menu_display)
         session.close()
         return []
