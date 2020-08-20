@@ -3,6 +3,24 @@ intents:
     - goodbye
     - ask_about_me
     - ask_skill_list
+    - ask_field_of_study_limits
+    - out_of_scope
+
+entities:
+- field_of_study
+- course_level
+- course_type
+
+slots:
+    field_of_study:
+        type: text
+    course_level:
+        type: text
+    course_type:
+        type: text
+
+forms:
+    - form_ask_limits
 
 responses:
     utter_greet:
@@ -16,7 +34,6 @@ responses:
     
     utter_ask_skill_list:
         - text: "Chętnie odpowiem na pytania związane z: \n > Listą kierunków na naszej uczelni \n > Limitami miejsc na wybrany przez Ciebie kierunek "
-
 
 session_config:
     session_expiration_time: 60

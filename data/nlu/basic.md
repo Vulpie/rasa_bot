@@ -6,6 +6,7 @@
 -   Cześć
 -   Hej
 -   Elo
+-   Witam
 
 ## intent:goodbye
 -   Muszę kończyć
@@ -29,3 +30,10 @@
 -   Czy możesz mi pomóc z
 -   Czy mozesz mi opowiedzieć o
 
+## intent:out_of_scope
+-   Żadne
+-   Anie ten ani ten
+-   Żaden z powyższych 
+-   Opowiedz żart o pingwinie
+-   Że co?
+-   Nie rozumiem
