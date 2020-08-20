@@ -2,5 +2,5 @@
 __pycache__
 results
 venv
-menu_list.db
+*.db
 models

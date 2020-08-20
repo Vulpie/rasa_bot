@@ -9,6 +9,9 @@
 -   Jakie jest limit dla studiów [inżynierskich]{"entity":"course-level", "value": "level1"} na kierunku [zarządzanie]{"entity":"field-of-study", "value": "zarządzanie"}
 -   Ile jest miejsc na [dzienne]{"entity":"course-type", "value": "stacjonarne"} studia [magisterskie]{"entity":"course-level", "value": "level2"} na kierunku [chemicznym]{"entity":"field-of-study", "value": "chemia"}
 -   Ile jest miejsc na [automatyce]{"entity":"field-of-study", "value": "automatyka"}
+-   Jakie są limity przyjęć na studia
+-   Ilu studentów przyjmujecie na studia
+-   Czy jest limit studentów na poszczególnych kierunkach
 
 ## intent:get_field_of_study
 -   Chce studiować na kiernku [informatyka]{"entity":"field-of-study", "value": "informatyka"}
