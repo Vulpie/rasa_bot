@@ -7,6 +7,7 @@ from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from rasa_sdk.forms import FormAction
+from rasa_sdk.events import AllSlotsReset
 
 # Base = declarative_base()
 # engine = create_engine("sqlite:///menu_list.db", echo=True)
@@ -21,19 +22,16 @@ FIELDS_OF_STUDY = ["fizyka","informatyka","matematyka","chemia","biologia","auto
 
 class LimitForm(FormAction):
     def name(self)-> Text:
-        return "form_ask_limits"
+        return "form_limits"
 
     @staticmethod
     def required_slots(tracker: Tracker) ->  List[Text]:
-        return ["field_of_study","course_level","course_type"]
-    
-    def slot_mappings(self) -> Dict[Text,Any]:
-        return {"field_of_study": self.from_entity(entity="field_of_study", intent=["ask_field_of_study_limits"]),"course_level": self.from_entity(entity="course_level", intent=["ask_field_of_study_limits"]),"course_type": self.from_entity(entity="course_type", intent=["ask_field_of_study_limits"])}
+        return ["field-of-study","course-level","course-type"]
     
     def submit(self,dispatcher: CollectingDispatcher, tracker: Tracker, domain: Dict[Text,Any]):
-        field_of_study = tracker.get_slot("field_of_study")
-        course_level = tracker.get_slot("course_level")
-        course_type = tracker.get_slot("course_type")
+        field_of_study = tracker.get_slot("field-of-study")
+        course_level = tracker.get_slot("course-level")
+        course_type = tracker.get_slot("course-type")
         limit = 80
         print (f"{field_of_study}:{course_level}:{course_type}")
         msg = "Niestety nie udało mi się znaleźć odpowiedzi na twoje pytanie. Spróbuj inaczej zadać pytanie lub sprawdż limity na stronie hddp://calkowicie_poprawny_i_prawdziwy_link_do_strony_z_limitami.hlmt"
@@ -42,4 +40,7 @@ class LimitForm(FormAction):
 
         dispatcher.utter_message(msg)
 
-        return []
+        return [AllSlotsReset()]
+
+    def slot_mappings(self) -> Dict[Text,Any]:
+        return {"field-of-study": self.from_entity(entity="field-of-study", intent=["get_field_of_study"]),"course_level": self.from_entity(entity="course-level", intent=["get_course_level"]),"course-type": self.from_entity(entity="course-type", intent=["get_course_type"])}

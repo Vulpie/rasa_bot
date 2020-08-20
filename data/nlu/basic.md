@@ -15,13 +15,13 @@
 -   Na razie
 -   Miłego dnia
 
-## intent:ask_about_me
+## intent:about_me
 -   Kim jesteś?
 -   Czy jesteś człowiekiem?
 -   Czy jesteś botem?
 -   Czy jesteś maszyną?
 
-## intent:ask_skill_list
+## intent:skill_list
 -   W czym możesz mi pomóc?
 -   Co potrafisz?
 -   Jak możesz mi pomóc?

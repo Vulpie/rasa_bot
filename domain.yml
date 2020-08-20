@@ -1,26 +1,29 @@
 intents:
     - greet
     - goodbye
-    - ask_about_me
-    - ask_skill_list
-    - ask_field_of_study_limits
+    - about_me
+    - skill_list
+    - field_of_study_limits
     - out_of_scope
-
-entities:
-- field_of_study
-- course_level
-- course_type
-
-slots:
-    field_of_study:
-        type: text
-    course_level:
-        type: text
-    course_type:
-        type: text
+    - get_field_of_study
+    - get_course_level
+    - get_course_type
 
 forms:
-    - form_ask_limits
+- form_limits
+
+entities:
+- field-of-study
+- course-level
+- course-type
+
+slots:
+    field-of-study:
+        type: unfeaturized
+    course-level:
+        type: unfeaturized
+    course-type:
+        type: unfeaturized
 
 responses:
     utter_greet:
@@ -29,11 +32,21 @@ responses:
     utter_goodbye:
         - text: 'Miłego dnia.'
 
-    utter_ask_about_me:
+    utter_about_me:
         - text: "Jestem prototypem wirtualnego asystenta kandydata na studia. Jestem tu po to, żeby odpowiedzieć na twoje pytania dotyczące rekrutacji na naszą uczelnię"
     
-    utter_ask_skill_list:
+    utter_skill_list:
         - text: "Chętnie odpowiem na pytania związane z: \n > Listą kierunków na naszej uczelni \n > Limitami miejsc na wybrany przez Ciebie kierunek "
+
+    utter_ask_field-of-study:
+        - text: "O jakim kierunku chciałbyś uzyskać informacje?"
+
+    utter_ask_course-level:
+        -   text: "Jakim stopniem studiów jesteś zainteresowany/a?"
+
+    utter_ask_course-type:
+        - text: "Chodzi o studia zaoczne czy stacjonarne?"
+
 
 session_config:
     session_expiration_time: 60
