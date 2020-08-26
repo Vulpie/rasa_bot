@@ -62,7 +62,7 @@
 -   chemii
 
 ##  synonym:zarządzanie
--   zarządaniu
+-   zarządzaniu
 
 ## synonym:level1
 -   inżynierskie

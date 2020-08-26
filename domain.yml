@@ -42,10 +42,20 @@ responses:
         - text: "O jakim kierunku chciałbyś uzyskać informacje?"
 
     utter_ask_course-level:
-        -   text: "Jakim stopniem studiów jesteś zainteresowany/a?"
+        - text: "Jakim stopniem studiów jesteś zainteresowany/a?"
+          buttons:
+          - title: "Studia pierwszego stopnia"
+            payload: 'level1'
+          - title: "Studia drugiego stopnia"
+            payload: "level2"
 
     utter_ask_course-type:
-        - text: "Chodzi o studia zaoczne czy stacjonarne?"
+        - text: "Chodzi o studia stacjonarne czy niestacjonarne?"
+          buttons:
+          - title: "Stacjonarne"
+            payload: 'stacjonarne'
+          - title: "Niestacjonarne"
+            payload: "niestacjonarne"
 
 
 session_config:
